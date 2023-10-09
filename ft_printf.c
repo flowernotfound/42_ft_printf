@@ -6,13 +6,13 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:17:11 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/09 19:15:24 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/09 22:40:09 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parse_flags(const char *format, va_list ap, t_flags *flags)
+void	parse_flags(const char *format, int *i, t_flags *flags)
 {
 	while (format[*i] != '\0')
 	{
@@ -32,6 +32,11 @@ void	parse_flags(const char *format, va_list ap, t_flags *flags)
 			break;
 		(*i)++;
 	}
+}
+
+int	print_arg(char type, va_list ap, t_flags flags)
+{
+
 }
 
 int	print_result(const char *format, va_list ap)
