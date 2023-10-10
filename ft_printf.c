@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:17:11 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/10 16:34:10 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:40:27 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	parse_flags(const char *format, int *i, t_flags *flags)
 {
-	while (format[*i] != '\0')
+	while (1)
 	{
 		if (format[*i] == '-')
 			flags->left_justfy = 1;
@@ -37,9 +37,10 @@ void	parse_flags(const char *format, int *i, t_flags *flags)
 int	print_arg(char type, va_list ap, t_flags flags)
 {
 	int	count;
-	
+
+	count = 0;
 	if (type == 'c')
-		count += print_char(va_arg(ap, char), flags);
+		count += print_char(va_arg(ap, int), flags);
 	else if (type == 's')
 		count += print_str(va_arg(ap, char *), flags);
 
