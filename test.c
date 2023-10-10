@@ -3,8 +3,9 @@
 int main (void)
 {
 	int re;
-	re = printf();
+//	re = printf(NULL);
 
-	printf("%d\n", re);
+//	printf("%d\n", re);
+	printf(NULL);
 	return (0);
 }
