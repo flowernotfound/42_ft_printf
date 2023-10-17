@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 10:36:59 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/17 16:13:33 by hmitsuyo         ###   ########.fr       */
+/*   Created: 2023/10/17 16:39:50 by hmitsuyo          #+#    #+#             */
+/*   Updated: 2023/10/17 16:40:31 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-
-typedef struct	s_flags
+t_flags	initialize_flags(void)
 {
-	int	left_justfy;
-	int	zero_padding;
-	int	precision;
-	int	hash;
-	int	plus;
-	int	space;
-}	t_flags;
+	t_flags flags;
 
-#endif
+	flags.left_justfy = 0;
+	flags.zero_padding = 0;
+	flags.precision = -1;
+	flags.hash = 0;
+	flags.plus = 0;
+	flags.space = 0;
+	return (flags);
+}
