@@ -2,10 +2,8 @@
 
 int main (void)
 {
-	int re;
-//	re = printf(NULL);
+	int a = 0;
 
-//	printf("%d\n", re);
-	printf(NULL);
+	printf("%d\n", a);
 	return (0);
 }
