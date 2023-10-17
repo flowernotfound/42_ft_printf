@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:36:59 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/17 16:13:33 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:13:37 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct	s_flags
 	int	zero_padding;
 	int	precision;
 	int	hash;
+	int	width;
 	int	plus;
 	int	space;
 }	t_flags;
