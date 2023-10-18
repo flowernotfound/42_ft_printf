@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:17:11 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/18 02:52:21 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:32:46 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	parse_flags(const char *format, int *i, t_flags *flags)
 			(*i)--;
 		}
 		else
-			break;
+			break ;
 		(*i)++;
 	}
 }
@@ -72,25 +72,18 @@ int	print_arg(char type, va_list ap, t_flags flags)
 		count += print_char(va_arg(ap, int), flags);
 	else if (type == 's')
 		count += print_str(va_arg(ap, char *), flags);
-
 	else if (type == 'p')
 		count += print_p(va_arg(ap, void *), flags);
-	
 	else if (type == 'd')
 		count += print_int(va_arg(ap, int), flags);
-	
 	else if (type == 'i')
 		count += print_int(va_arg(ap, int), flags);
-
 	else if (type == 'u')
 		count += print_unsigned(va_arg(ap, unsigned int), flags);
-
 	else if (type == 'x')
 		count += print_hex(va_arg(ap, unsigned int), 0, flags);
-
 	else if (type == 'X')
 		count += print_hex(va_arg(ap, unsigned int), 1, flags);
-
 	else if (type == '%')
 		count += print_percent(flags);
 	return (count);
@@ -99,8 +92,8 @@ int	print_arg(char type, va_list ap, t_flags flags)
 int	print_result(const char *format, va_list ap)
 {
 	t_flags	flags;
-	int	count;
-	int	i;
+	int		count;
+	int		i;
 
 	i = 0;
 	count = 0;
@@ -126,7 +119,7 @@ int	print_result(const char *format, va_list ap)
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	int	result;
+	int		result;
 
 	if (!format)
 		return (0);
