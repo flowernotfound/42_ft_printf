@@ -6,16 +6,11 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:17:11 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/18 12:32:46 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:11:07 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	is_digit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
 
 void	parse_flags(const char *format, int *i, t_flags *flags)
 {
@@ -24,21 +19,7 @@ void	parse_flags(const char *format, int *i, t_flags *flags)
 		if (format[*i] == '-')
 			flags->left_justfy = 1;
 		else if (format[*i] == '.')
-		{
-			(*i)++;
-			if (!is_digit(format[*i]))
-				flags->precision = 0;
-			else
-			{
-				flags->precision = 0;
-				while (is_digit(format[*i]))
-				{
-					flags->precision = flags->precision * 10 + (format[*i] - '0');
-					(*i)++;
-				}
-				(*i)--;
-			}
-		}
+			parse_precision(format, i, flags);
 		else if (format[*i] == '0' && flags->precision == -1)
 			flags->zero_padding = 1;
 		else if (format[*i] == '#')
@@ -48,15 +29,7 @@ void	parse_flags(const char *format, int *i, t_flags *flags)
 		else if (format[*i] == ' ')
 			flags->space = 1;
 		else if (is_digit(format[*i]))
-		{
-			flags->width = 0;
-			while (is_digit(format[*i]))
-			{
-				flags->width = flags->width * 10 + (format[*i] - '0');
-				(*i)++;
-			}
-			(*i)--;
-		}
+			parse_width(format, i, flags);
 		else
 			break ;
 		(*i)++;
