@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:39:50 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/18 13:11:00 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:32:36 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_flags	initialize_flags(void)
 {
 	t_flags	flags;
 
-	flags.left_justfy = 0;
+	flags.left_justify = 0;
 	flags.zero_padding = 0;
 	flags.precision = -1;
 	flags.hash = 0;

@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:17:11 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/18 13:11:07 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:32:19 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	parse_flags(const char *format, int *i, t_flags *flags)
 	while (1)
 	{
 		if (format[*i] == '-')
-			flags->left_justfy = 1;
+			flags->left_justify = 1;
 		else if (format[*i] == '.')
 			parse_precision(format, i, flags);
 		else if (format[*i] == '0' && flags->precision == -1)

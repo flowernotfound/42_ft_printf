@@ -6,7 +6,7 @@
 /*   By: hmitsuyo <yourLogin@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:36:59 by hmitsuyo          #+#    #+#             */
-/*   Updated: 2023/10/17 17:13:37 by hmitsuyo         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:32:51 by hmitsuyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct	s_flags
 {
-	int	left_justfy;
+	int	left_justify;
 	int	zero_padding;
 	int	precision;
 	int	hash;
