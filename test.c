@@ -5,7 +5,7 @@ int main (void)
 	int a = 123;
 	int count = 0;
 	char *s = "Hello";
-	count = printf("[%10c]\n", 'a');
+	count = printf("%p\n", s);
 
 	printf("%d\n", count);
 	return (0);
